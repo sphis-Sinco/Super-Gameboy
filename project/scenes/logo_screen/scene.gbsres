@@ -1,0 +1,161 @@
+{
+  "_resourceType": "scene",
+  "id": "936c4156-def1-4074-b0c6-a2704d1648cc",
+  "_index": 0,
+  "name": "Logo Screen",
+  "backgroundId": "46e19c9b-f346-48fc-b3f1-8eb196838152",
+  "tilesetId": "",
+  "width": 20,
+  "height": 18,
+  "type": "TOPDOWN",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "0fc8+00a0+",
+  "autoFadeSpeed": 3,
+  "symbol": "scene_1",
+  "x": 104,
+  "y": 256,
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "0"
+          },
+          "valueB": {
+            "type": "true"
+          }
+        },
+        "__collapseElse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "It is your\nfirst time.",
+                "Would you like to\ncreate a save\nautomatically?",
+                "(Saved to Slot 1.)"
+              ],
+              "__section": "text",
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 5,
+              "position": "bottom",
+              "clearPrevious": true,
+              "showFrame": "true",
+              "speedIn": -1,
+              "speedOut": -1,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "closeDelayTime": 0.5,
+              "closeDelayFrames": 30,
+              "__collapse": false
+            },
+            "id": "bc8afb74-5e29-4394-b3b2-a4ce6f2ddb09"
+          },
+          {
+            "command": "EVENT_CHOICE",
+            "args": {
+              "variable": "T0",
+              "trueText": "Yes",
+              "falseText": "No",
+              "__collapse": true
+            },
+            "id": "e77ab921-2597-4b98-b245-bcc808739c84"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "T0"
+                },
+                "valueB": {
+                  "type": "true"
+                }
+              },
+              "__collapseElse": true,
+              "__collapse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_SAVE_DATA",
+                  "args": {
+                    "saveSlot": 0,
+                    "__scriptTabs": "save",
+                    "__collapse": true
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "1",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        },
+                        "id": "6524d09b-0679-4628-aabe-fd5b9bb4bb8c"
+                      }
+                    ],
+                    "load": []
+                  },
+                  "id": "162ee5ff-d3df-4d4f-bf51-b482d5784860"
+                }
+              ],
+              "false": []
+            },
+            "id": "31b9aaa3-5317-4250-b590-8ccf642ba1e5"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "__presetId": "9cf00463-e256-4f59-ba76-b1be8e534e85",
+              "text": [
+                "Select a Save."
+              ],
+              "__section": "layout",
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 5,
+              "position": "bottom",
+              "clearPrevious": true,
+              "showFrame": "true",
+              "speedIn": -1,
+              "speedOut": -1,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "closeDelayTime": 0.5,
+              "closeDelayFrames": 30
+            },
+            "id": "1fd6e247-d0f5-41ee-b6c0-746d81e6b8e7"
+          }
+        ]
+      },
+      "id": "01de545c-ed1e-4fd7-9f28-6b7f1a88949d"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "labelColor": "green",
+  "playerSpriteSheetId": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
+  "autoFadeEventCollapse": true
+}

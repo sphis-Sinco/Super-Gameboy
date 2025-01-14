@@ -1,0 +1,12 @@
+{
+  "_resourceType": "background",
+  "id": "09551424-ee83-43c6-bc32-9beaf95e1234",
+  "name": "space",
+  "symbol": "bg_space",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "space.png",
+  "tileColors": ""
+}
